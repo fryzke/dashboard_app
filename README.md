@@ -57,8 +57,11 @@ npm run dev
 /lib                 # API 호출
 /store               # Zustand 상태 관리
 /data                # 타입 정의 및 더미 데이터
+```
+---
 
-상태 관리 (Zustand)
+
+#상태 관리 (Zustand)
 
 useAppStore: 회사, 포스트, 로딩 상태 관리, 데이터 fetch 및 저장
 
