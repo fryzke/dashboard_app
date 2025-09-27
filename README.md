@@ -86,13 +86,13 @@ yearMonth 선택 가능
 
 ## Rendering Efficiency
 
-# TabList: activeTab 변경 시 선택된 회사만 rerender.
+ TabList: activeTab 변경 시 선택된 회사만 rerender.
 
-# ChartRender: props로 전달된 companyId 변경 시 rerender.
+ ChartRender: props로 전달된 companyId 변경 시 rerender.
 
-# PostModal: isOpen이 true일 때만 mount → 불필요한 rerender 최소화.
+ PostModal: isOpen이 true일 때만 mount → 불필요한 rerender 최소화.
 
-# Zustand store 사용 → prop drilling 최소화, 구독된 컴포넌트만 rerender.
+ Zustand store 사용 → prop drilling 최소화, 구독된 컴포넌트만 rerender.
 
 ## Tradeoffs / Shortcuts
 
