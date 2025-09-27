@@ -5,7 +5,7 @@
 사용자는 각 회사의 월별 배출량 차트를 확인하고, 관련 포스트를 추가하거나 수정할 수 있습니다.
 
 주요 기술 스택:
-- **Next.js (App Router, React 18+)**
+- **Next.js**
 - **Tailwind CSS**: 스타일링
 - **Recharts**: 차트 렌더링
 - **Zustand**: 전역 상태 관리
@@ -53,7 +53,7 @@ npm run dev
 
 폴더 구조
 /app                 # Next.js App Router 페이지
-/components          # 재사용 가능한 컴포넌트 (ChartRender, TabList, PostModal, SideBar 등)
+/components          # 재사용 가능한 컴포넌트 (ChartRender, TabList, Modal, SideBar 등)
 /lib                 # API 호출
 /store               # Zustand 상태 관리
 /data                # 타입 정의 및 더미 데이터
@@ -61,7 +61,7 @@ npm run dev
 ---
 
 
-#상태 관리 (Zustand)
+# 상태 관리 (Zustand)
 
 useAppStore: 회사, 포스트, 로딩 상태 관리, 데이터 fetch 및 저장
 
@@ -69,13 +69,13 @@ useUIStore: Sidebar 상태 관리
 
 useCompanyStore: 회사 리스트 fetch 및 관리
 
-차트 및 포스트 관리
+# 차트 및 포스트 관리
 
 ChartRender에서 Recharts 사용
 
 월별 포스트 추가/수정 시 모달 사용
 
-PostModal 컴포넌트
+# Modal 컴포넌트
 
 postId가 있으면 수정, 없으면 새 글 작성
 
@@ -84,15 +84,15 @@ yearMonth 선택 가능
 필수 입력 체크 및 로딩 상태 처리
 
 
-##Rendering Efficiency
+## Rendering Efficiency
 
-#TabList: activeTab 변경 시 선택된 회사만 rerender.
+# TabList: activeTab 변경 시 선택된 회사만 rerender.
 
-#ChartRender: props로 전달된 companyId 변경 시 rerender.
+# ChartRender: props로 전달된 companyId 변경 시 rerender.
 
-#PostModal: isOpen이 true일 때만 mount → 불필요한 rerender 최소화.
+# PostModal: isOpen이 true일 때만 mount → 불필요한 rerender 최소화.
 
-#Zustand store 사용 → prop drilling 최소화, 구독된 컴포넌트만 rerender.
+# Zustand store 사용 → prop drilling 최소화, 구독된 컴포넌트만 rerender.
 
 ## Tradeoffs / Shortcuts
 
@@ -106,13 +106,13 @@ form validation은 기본적인 required 체크만 구현.
 
 ## Design Rationale
 
-#Layout
+# Layout
 
 사이드바 + 헤더 + 탭 기반 구조로 직관적인 탐색 제공.
 
 회사별 데이터를 탭으로 구분하여 스위칭 UX 단순화.
 
-#UI Decisions
+# UI Decisions
 
 Tailwind CSS만 사용 → 의존성 최소화 및 빠른 프로토타이핑.
 
@@ -120,5 +120,5 @@ Tailwind CSS만 사용 → 의존성 최소화 및 빠른 프로토타이핑.
 
 모달을 분리(PostModal.tsx) → 관심사 분리 및 재사용성 강화.
 
-#figma 디자인 링크
+# figma 디자인 링크
 https://www.figma.com/design/AxjyASp6584UH7l1gFdxaT/Dashboard?node-id=0-1&t=cEJJQv0nwZJnOqae-1
